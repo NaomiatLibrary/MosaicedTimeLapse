@@ -49,7 +49,6 @@ def make_video(args,key):
         sys.exit() 
     for img in imglist:
         video.write(img)
-        cv2.imwrite('test.png',img)
     video.release()
     print('made video!')
 
