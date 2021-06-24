@@ -1,6 +1,10 @@
 # MosaicedTimeLapse
 Take a mosaicked time-lapse capture video of your desktop.
 Use it to keep track of your progress and share it without leakage of personal information.
+## Warning
+We do not take any responsibility for anything that may happen by using this application.
+For example, your personal information may be leaked if the mosaic is somehow restored.
+
 ## Feature
 - choose interval between shots
 - set fps as you like
