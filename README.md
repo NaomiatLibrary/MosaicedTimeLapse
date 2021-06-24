@@ -7,7 +7,8 @@ Use it to keep track of your progress and share it without leakage of personal i
 - choose the strength of mosaic
 - set if exclude mosaic on clock(mac's upper left, 300x70)
 - set if reduce size
-- export in mp4
+- export in mp4(H264)
+![](example.jpg)
 ## Setup
 `pipenv sync`
 ## How to Use

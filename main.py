@@ -42,7 +42,7 @@ def make_video(args,key):
         sys.exit()
     height, width, channels = imglist[0].shape
     print(height, width, channels)
-    fourcc = cv2.VideoWriter_fourcc(*'MP4V')
+    fourcc = cv2.VideoWriter_fourcc(*'H264')
     video = cv2.VideoWriter('./save/timelapse_{}.mp4'.format(key),fourcc, args.fps, (width,height),isColor=True)
     if not video.isOpened():
         print("ERROR: video can't be opened")
@@ -60,7 +60,7 @@ if __name__ == "__main__":
     parser.add_argument("--length", help="set max length of video(second, defalut is infinity)",default=None,type=int)
     parser.add_argument("--strength", help="set strength of mosaic(defalut is 0.05, 1 is no mosaic)",default=0.05,type=float)
     parser.add_argument("--exclock", help="exclude mosaic from upper right (mac's clock region)(default=True)",default=True,type=bool)
-    parser.add_argument("--reduce", help="reduce image size(default=1.0)",default=1.0,type=float)
+    parser.add_argument("--reduce", help="reduce image size(default=0.5)",default=0.5,type=float)
     args = parser.parse_args()
     key=int(time.time())
     try:
