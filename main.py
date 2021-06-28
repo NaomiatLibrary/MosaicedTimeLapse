@@ -29,10 +29,13 @@ def shoot_interval(args,key):
     global imglist
     counter=0
     while (not args.length) or (counter*args.interval<args.length*args.fps):
-        screenshot = pyautogui.screenshot()#'./temp/screenshot_{}_{}.png'.format(key,counter)
-        open_cv_image = cv2.cvtColor(np.array(screenshot), cv2.COLOR_RGB2BGR)
-        imglist.append( reduce_img_size( mosaic( open_cv_image,args),args ) )
-        counter+=1
+        try:
+            screenshot = pyautogui.screenshot()#'./temp/screenshot_{}_{}.png'.format(key,counter)
+            open_cv_image = cv2.cvtColor(np.array(screenshot), cv2.COLOR_RGB2BGR)
+            imglist.append( reduce_img_size( mosaic( open_cv_image,args),args ) )
+            counter+=1
+        except:
+            print("no display data...")
         time.sleep(args.interval)
 
 def make_video(args,key):
